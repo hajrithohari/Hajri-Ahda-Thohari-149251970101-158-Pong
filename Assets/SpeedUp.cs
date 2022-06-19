@@ -11,8 +11,7 @@ public class SpeedUp : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("ada speed up");
-        Destroy(gameObject, 6f);
+        Destroy(gameObject, 5f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

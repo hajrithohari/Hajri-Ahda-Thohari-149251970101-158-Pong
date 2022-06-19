@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PaddleController : MonoBehaviour
 {
+    public Collider2D ball;
     public int speed;
     public KeyCode upKey;
     public KeyCode downKey;
+    public bool isPaddleHitBall;
 
+    private Vector3 scale;
+    
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -40,5 +44,16 @@ public class PaddleController : MonoBehaviour
     {
         Debug.Log("Test: " + movement);
         rb.velocity = movement;
+    }
+
+    public void PaddleAddSize(float size)
+    {
+        scale = new Vector3(0, size, 0);
+        transform.localScale += scale;
+    }
+
+    public void PaddleAddSpeed(int accel)
+    {
+        speed *= accel;
     }
 }
